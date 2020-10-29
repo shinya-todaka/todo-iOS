@@ -7,7 +7,7 @@
 
 import XCTest
 @testable import todo_iOS
-
+// swiftlint:disable type_name
 class todo_iOSTests: XCTestCase {
 
     override func setUpWithError() throws {
