@@ -25,4 +25,4 @@ Pods/*
 .DS_Store
 
 #Firebase 
-todo-iOS/GoogleServiceInfo.plist 
+todo-iOS/GoogleService-Info.plist 

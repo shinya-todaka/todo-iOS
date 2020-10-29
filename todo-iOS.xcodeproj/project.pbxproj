@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B95469E254AB4FA005E3F05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B95469D254AB4FA005E3F05 /* GoogleService-Info.plist */; };
 		0BDC2B1B254A971A00173051 /* todo_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */; };
 		0BDC2B1D254A971A00173051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1C254A971A00173051 /* ContentView.swift */; };
 		0BDC2B1F254A971E00173051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1E254A971E00173051 /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		0BDC2B4B254A9C5C00173051 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDC2B4A254A9C5C00173051 /* FirebaseAuth */; };
 		0BDC2B4D254A9C5C00173051 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDC2B4C254A9C5C00173051 /* FirebaseDynamicLinks */; };
 		0BDC2B4F254A9C5C00173051 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0BDC2B4E254A9C5C00173051 /* FirebaseFirestore */; };
-		0BDC2B51254A9DEE00173051 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC2B50254A9DEE00173051 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B95469D254AB4FA005E3F05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0BDC2B17254A971A00173051 /* todo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_iOSApp.swift; sourceTree = "<group>"; };
 		0BDC2B1C254A971A00173051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		0BDC2B33254A971E00173051 /* todo-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "todo-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC2B37254A971E00173051 /* todo_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_iOSUITests.swift; sourceTree = "<group>"; };
 		0BDC2B39254A971E00173051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BDC2B50254A9DEE00173051 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */,
+				0B95469D254AB4FA005E3F05 /* GoogleService-Info.plist */,
 				0BDC2B1C254A971A00173051 /* ContentView.swift */,
 				0BDC2B1E254A971E00173051 /* Assets.xcassets */,
-				0BDC2B50254A9DEE00173051 /* GoogleService-Info.plist */,
 				0BDC2B23254A971E00173051 /* Info.plist */,
 				0BDC2B20254A971E00173051 /* Preview Content */,
 			);
@@ -259,7 +259,7 @@
 			files = (
 				0BDC2B22254A971E00173051 /* Preview Assets.xcassets in Resources */,
 				0BDC2B1F254A971E00173051 /* Assets.xcassets in Resources */,
-				0BDC2B51254A9DEE00173051 /* GoogleService-Info.plist in Resources */,
+				0B95469E254AB4FA005E3F05 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
