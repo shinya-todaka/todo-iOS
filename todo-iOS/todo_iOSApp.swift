@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
 
-@main
 // swiftlint:disable type_name
+@main
 struct todo_iOSApp: App {
+
+    init() {
+        FirebaseApp.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView().environmentObject(AuthenticationService())
         }
     }
 }

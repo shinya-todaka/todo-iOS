@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0B95469E254AB4FA005E3F05 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B95469D254AB4FA005E3F05 /* GoogleService-Info.plist */; };
+		0B9546A3254AB856005E3F05 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546A2254AB856005E3F05 /* Task.swift */; };
+		0B9546A5254AB8B8005E3F05 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546A4254AB8B8005E3F05 /* RootView.swift */; };
+		0B9546A7254AB93F005E3F05 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546A6254AB93F005E3F05 /* Mock.swift */; };
+		0B9546A9254AC071005E3F05 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546A8254AC070005E3F05 /* TaskListView.swift */; };
+		0B9546AB254AC1AC005E3F05 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546AA254AC1AC005E3F05 /* AuthenticationService.swift */; };
+		0B9546AD254AC448005E3F05 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546AC254AC448005E3F05 /* SignInView.swift */; };
+		0B9546AF254AC9C8005E3F05 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546AE254AC9C8005E3F05 /* TaskListViewModel.swift */; };
+		0B9546B1254B0954005E3F05 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546B0254B0953005E3F05 /* TaskRepository.swift */; };
+		0B9546B5254B3CF0005E3F05 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546B4254B3CEE005E3F05 /* AddTaskView.swift */; };
 		0BDC2B1B254A971A00173051 /* todo_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */; };
-		0BDC2B1D254A971A00173051 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1C254A971A00173051 /* ContentView.swift */; };
 		0BDC2B1F254A971E00173051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1E254A971E00173051 /* Assets.xcassets */; };
 		0BDC2B22254A971E00173051 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC2B21254A971E00173051 /* Preview Assets.xcassets */; };
 		0BDC2B2D254A971E00173051 /* todo_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC2B2C254A971E00173051 /* todo_iOSTests.swift */; };
@@ -40,9 +48,17 @@
 
 /* Begin PBXFileReference section */
 		0B95469D254AB4FA005E3F05 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B9546A2254AB856005E3F05 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		0B9546A4254AB8B8005E3F05 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0B9546A6254AB93F005E3F05 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		0B9546A8254AC070005E3F05 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		0B9546AA254AC1AC005E3F05 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		0B9546AC254AC448005E3F05 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		0B9546AE254AC9C8005E3F05 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		0B9546B0254B0953005E3F05 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
+		0B9546B4254B3CEE005E3F05 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		0BDC2B17254A971A00173051 /* todo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_iOSApp.swift; sourceTree = "<group>"; };
-		0BDC2B1C254A971A00173051 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0BDC2B1E254A971E00173051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BDC2B21254A971E00173051 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BDC2B23254A971E00173051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B9546A1254AB84C005E3F05 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0B9546A2254AB856005E3F05 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		0BDC2B0E254A971A00173051 = {
 			isa = PBXGroup;
 			children = (
@@ -107,10 +131,18 @@
 		0BDC2B19254A971A00173051 /* todo-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0B9546A1254AB84C005E3F05 /* Models */,
 				0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */,
-				0B95469D254AB4FA005E3F05 /* GoogleService-Info.plist */,
-				0BDC2B1C254A971A00173051 /* ContentView.swift */,
+				0B9546AE254AC9C8005E3F05 /* TaskListViewModel.swift */,
+				0B9546A8254AC070005E3F05 /* TaskListView.swift */,
+				0B9546A4254AB8B8005E3F05 /* RootView.swift */,
+				0B9546AC254AC448005E3F05 /* SignInView.swift */,
+				0B9546AA254AC1AC005E3F05 /* AuthenticationService.swift */,
+				0B9546B4254B3CEE005E3F05 /* AddTaskView.swift */,
+				0B9546A6254AB93F005E3F05 /* Mock.swift */,
+				0B9546B0254B0953005E3F05 /* TaskRepository.swift */,
 				0BDC2B1E254A971E00173051 /* Assets.xcassets */,
+				0B95469D254AB4FA005E3F05 /* GoogleService-Info.plist */,
 				0BDC2B23254A971E00173051 /* Info.plist */,
 				0BDC2B20254A971E00173051 /* Preview Content */,
 			);
@@ -304,8 +336,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDC2B1D254A971A00173051 /* ContentView.swift in Sources */,
+				0B9546B5254B3CF0005E3F05 /* AddTaskView.swift in Sources */,
+				0B9546A5254AB8B8005E3F05 /* RootView.swift in Sources */,
+				0B9546AD254AC448005E3F05 /* SignInView.swift in Sources */,
+				0B9546A7254AB93F005E3F05 /* Mock.swift in Sources */,
+				0B9546A3254AB856005E3F05 /* Task.swift in Sources */,
+				0B9546AB254AC1AC005E3F05 /* AuthenticationService.swift in Sources */,
+				0B9546AF254AC9C8005E3F05 /* TaskListViewModel.swift in Sources */,
+				0B9546B1254B0954005E3F05 /* TaskRepository.swift in Sources */,
 				0BDC2B1B254A971A00173051 /* todo_iOSApp.swift in Sources */,
+				0B9546A9254AC071005E3F05 /* TaskListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
