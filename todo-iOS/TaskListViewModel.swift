@@ -12,32 +12,47 @@ import SwiftUI
 
 class TaskListViewModel: ObservableObject {
 
-    var listener: ListenerRegistration?
-    var userId: String?
+    private var userId: String?
+    private let tasksRepository = TasksRepository()
+
+    private var cancellables: [AnyCancellable] = []
 
     @Published var tasks: [Task] = []
 
     func fetchTasks(userId: String) {
-        print(userId)
-        listener = Firestore.firestore().collection("users").document("shinya").collection("tasks").addSnapshotListener { snapshot, error in
-            if let error = error {
+        tasksRepository.fetchTasks(userId: userId).sink { result in
+            switch result {
+            case let .failure(error):
                 print(error)
-                return
+            case .finished:
+                print("finsihed")
             }
-
-            guard let documents = snapshot?.documents else {
-                return
-            }
-
-            let tasks = documents.compactMap { snapshot -> Task? in
-                try? snapshot.data(as: Task.self)
-            }
-
+        } receiveValue: { tasks in
             self.tasks = tasks
-        }
+        }.store(in: &cancellables)
     }
 
-    deinit {
-        self.listener?.remove()
+    func addTask(uid: String, task: Task, completion: @escaping (Error?) -> Void) {
+        tasksRepository.addTask(uid: uid, task: task).sink { result in
+            if case let .failure(error) = result {
+                completion(error)
+            }
+        } receiveValue: { _ in completion(nil)
+        }
+        .store(in: &cancellables)
+    }
+
+    func updateTask(uid: String, task: Task) {
+        guard let taskId = task.id else {
+            return
+        }
+
+        tasksRepository
+            .updateTask(uid: uid, taskId: taskId, task: task)
+            .sink { error in
+                print(error)
+            } receiveValue: {
+                print("success")
+            }.store(in: &cancellables)
     }
 }

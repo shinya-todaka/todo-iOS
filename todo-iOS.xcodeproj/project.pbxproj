@@ -17,6 +17,9 @@
 		0B9546AF254AC9C8005E3F05 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546AE254AC9C8005E3F05 /* TaskListViewModel.swift */; };
 		0B9546B1254B0954005E3F05 /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546B0254B0953005E3F05 /* TaskRepository.swift */; };
 		0B9546B5254B3CF0005E3F05 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546B4254B3CEE005E3F05 /* AddTaskView.swift */; };
+		0B9546B8254BEA70005E3F05 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546B7254BEA6F005E3F05 /* TaskView.swift */; };
+		0B9546BA254C0517005E3F05 /* TasksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546B9254C0515005E3F05 /* TasksRepository.swift */; };
+		0B9546BC254C0880005E3F05 /* Firestore+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9546BB254C0880005E3F05 /* Firestore+Combine.swift */; };
 		0BDC2B1B254A971A00173051 /* todo_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */; };
 		0BDC2B1F254A971E00173051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC2B1E254A971E00173051 /* Assets.xcassets */; };
 		0BDC2B22254A971E00173051 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC2B21254A971E00173051 /* Preview Assets.xcassets */; };
@@ -57,6 +60,9 @@
 		0B9546AE254AC9C8005E3F05 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		0B9546B0254B0953005E3F05 /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		0B9546B4254B3CEE005E3F05 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		0B9546B7254BEA6F005E3F05 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		0B9546B9254C0515005E3F05 /* TasksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksRepository.swift; sourceTree = "<group>"; };
+		0B9546BB254C0880005E3F05 /* Firestore+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Combine.swift"; sourceTree = "<group>"; };
 		0BDC2B17254A971A00173051 /* todo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todo_iOSApp.swift; sourceTree = "<group>"; };
 		0BDC2B1E254A971E00173051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +114,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0B9546B6254BDCD1005E3F05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0B9546AC254AC448005E3F05 /* SignInView.swift */,
+				0B9546B4254B3CEE005E3F05 /* AddTaskView.swift */,
+				0B9546A4254AB8B8005E3F05 /* RootView.swift */,
+				0B9546A8254AC070005E3F05 /* TaskListView.swift */,
+				0B9546B7254BEA6F005E3F05 /* TaskView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0B9546BD254C240D005E3F05 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0BB48705254C7C0E00810D5D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B9546BB254C0880005E3F05 /* Firestore+Combine.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		0BDC2B0E254A971A00173051 = {
 			isa = PBXGroup;
 			children = (
@@ -131,14 +164,14 @@
 		0BDC2B19254A971A00173051 /* todo-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0BB48705254C7C0E00810D5D /* Extensions */,
+				0B9546BD254C240D005E3F05 /* New Group */,
+				0B9546B6254BDCD1005E3F05 /* Views */,
 				0B9546A1254AB84C005E3F05 /* Models */,
 				0BDC2B1A254A971A00173051 /* todo_iOSApp.swift */,
+				0B9546B9254C0515005E3F05 /* TasksRepository.swift */,
 				0B9546AE254AC9C8005E3F05 /* TaskListViewModel.swift */,
-				0B9546A8254AC070005E3F05 /* TaskListView.swift */,
-				0B9546A4254AB8B8005E3F05 /* RootView.swift */,
-				0B9546AC254AC448005E3F05 /* SignInView.swift */,
 				0B9546AA254AC1AC005E3F05 /* AuthenticationService.swift */,
-				0B9546B4254B3CEE005E3F05 /* AddTaskView.swift */,
 				0B9546A6254AB93F005E3F05 /* Mock.swift */,
 				0B9546B0254B0953005E3F05 /* TaskRepository.swift */,
 				0BDC2B1E254A971E00173051 /* Assets.xcassets */,
@@ -342,9 +375,12 @@
 				0B9546A7254AB93F005E3F05 /* Mock.swift in Sources */,
 				0B9546A3254AB856005E3F05 /* Task.swift in Sources */,
 				0B9546AB254AC1AC005E3F05 /* AuthenticationService.swift in Sources */,
+				0B9546BC254C0880005E3F05 /* Firestore+Combine.swift in Sources */,
+				0B9546BA254C0517005E3F05 /* TasksRepository.swift in Sources */,
 				0B9546AF254AC9C8005E3F05 /* TaskListViewModel.swift in Sources */,
 				0B9546B1254B0954005E3F05 /* TaskRepository.swift in Sources */,
 				0BDC2B1B254A971A00173051 /* todo_iOSApp.swift in Sources */,
+				0B9546B8254BEA70005E3F05 /* TaskView.swift in Sources */,
 				0B9546A9254AC071005E3F05 /* TaskListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

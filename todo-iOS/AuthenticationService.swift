@@ -29,15 +29,14 @@ class AuthenticationService: ObservableObject {
     }
 
     func signin() {
-        Auth.auth().signInAnonymously { result, error in
-            if let error = error {
-                print(error)
-                return
-            }
+        Auth.auth().signInAnonymously()
+    }
 
-            if let user = result?.user {
-                print(user.uid)
-            }
+    func signout() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error)
         }
     }
 }

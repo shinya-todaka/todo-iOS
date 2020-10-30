@@ -5,10 +5,12 @@
 //  Created by 戸高新也 on 2020/10/29.
 //
 
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 struct Task: Codable, Identifiable {
     @DocumentID var id: String?
-    let name: String
-    let isDone: Bool
+    var name: String
+    var isDone: Bool
+    @ServerTimestamp var createdAt: Timestamp?
 }
