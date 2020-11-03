@@ -32,12 +32,12 @@ class TaskListViewModel: ObservableObject {
         }.store(in: &cancellables)
     }
 
-    func addTask(uid: String, task: Task, completion: @escaping (Error?) -> Void) {
+    func addTask(uid: String, task: Task) {
         tasksRepository.addTask(uid: uid, task: task).sink { result in
             if case let .failure(error) = result {
-                completion(error)
+                print(error)
             }
-        } receiveValue: { _ in completion(nil)
+        } receiveValue: { _ in
         }
         .store(in: &cancellables)
     }
@@ -54,5 +54,23 @@ class TaskListViewModel: ObservableObject {
             } receiveValue: {
                 print("success")
             }.store(in: &cancellables)
+    }
+
+    func deleteTask(uid: String, indexSet: IndexSet) {
+        guard let index = indexSet.first, let taskId = tasks[index].id else {
+            return
+        }
+        tasksRepository
+            .deleteTask(uid: uid, taskId: taskId)
+            .sink { result in
+                switch result {
+                case let .failure(error):
+                    print(error)
+                case .finished:
+                    print("deleted!")
+                }
+            } receiveValue: { _ in
+            }
+            .store(in: &cancellables)
     }
 }

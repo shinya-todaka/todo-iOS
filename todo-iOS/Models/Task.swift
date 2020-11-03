@@ -8,7 +8,7 @@
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Task: Codable, Identifiable {
+struct Task: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var name: String
     var isDone: Bool

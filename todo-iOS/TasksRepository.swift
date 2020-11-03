@@ -10,9 +10,6 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class TasksRepository: ObservableObject {
-
-    @Published var tasks: [Task] = []
-
     func fetchTasks(userId: String) -> AnyPublisher<[Task], Error> {
         let query = Firestore.firestore()
             .collection("users").document(userId)
@@ -28,5 +25,10 @@ class TasksRepository: ObservableObject {
     func updateTask(uid: String, taskId: String, task: Task) -> AnyPublisher<Void, Error> {
         let documentReference = Firestore.firestore().collection("users").document(uid).collection("tasks").document(taskId)
         return documentReference.updateData(data: task)
+    }
+
+    func deleteTask(uid: String, taskId: String) -> AnyPublisher<Void, Error> {
+        let documentReference = Firestore.firestore().collection("users").document(uid).collection("tasks").document(taskId)
+        return documentReference.delete()
     }
 }

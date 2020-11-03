@@ -12,22 +12,33 @@ struct SignInView: View {
     @EnvironmentObject var authService: AuthenticationService
 
     var body: some View {
-        Text("Todo")
-            .font(.system(size: 20, weight: .heavy))
 
-        VStack(spacing: 24) {
+        VStack(alignment: .center) {
+            Spacer()
 
             Button(action: {
                 authService.signin()
             }, label: {
-                Text("Login")
+                Text("sign in with apple")
                     .fontWeight(.medium)
-                    .frame(minWidth: 160)
                     .foregroundColor(.white)
-                    .padding(12)
+                    .frame(maxWidth: .infinity, minHeight: 50)
                     .background(Color.accentColor)
                     .cornerRadius(8)
             })
+            .padding(EdgeInsets(top: 0, leading: 32, bottom: 8, trailing: 32))
+
+            Button(action: {
+                authService.signin()
+            }, label: {
+                Text("signin")
+                    .fontWeight(.medium)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity, minHeight: 50)
+                    .background(Color.accentColor)
+                    .cornerRadius(8)
+            })
+            .padding(EdgeInsets(top: 0, leading: 32, bottom: 16, trailing: 32))
         }
     }
 }

@@ -89,6 +89,17 @@ extension DocumentReference {
         }.eraseToAnyPublisher()
     }
 
+    func delete() -> AnyPublisher<Void, Error> {
+        Future { [weak self] promise in
+            self?.delete { error in
+                if let error = error {
+                    promise(.failure(error))
+                }
+                promise(.success(()))
+            }
+        }.eraseToAnyPublisher()
+    }
+
     func addSnapshotListener() -> AnyPublisher<DocumentSnapshot, Error> {
         let publisher = Publisher(documentReference: self)
         return publisher.eraseToAnyPublisher()
@@ -120,7 +131,6 @@ extension Query {
         func cancel() {
             listener?.remove()
         }
-
     }
 
     struct Publisher<D: Decodable>: Combine.Publisher {

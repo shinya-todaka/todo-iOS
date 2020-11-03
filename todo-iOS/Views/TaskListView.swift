@@ -10,20 +10,23 @@ import SwiftUI
 
 struct TaskListView: View {
 
-    @EnvironmentObject var authService: AuthenticationService
     @ObservedObject private var tasksListViewModel = TaskListViewModel()
 
     let authUser: FirebaseAuth.User
 
-    @State private var isPresentedSheet = false
+    @State private var presentationView: PresentationView?
 
     var body: some View {
         NavigationView {
             Group {
                 ZStack {
-                    List(tasksListViewModel.tasks) { task in
-                        TaskView(task: task, updateTask: { task in
-                            tasksListViewModel.updateTask(uid: authUser.uid, task: task)
+                    List {
+                        ForEach(tasksListViewModel.tasks, id: \.self) { task in
+                            TaskView(task: task, updateTask: { task in
+                                tasksListViewModel.updateTask(uid: authUser.uid, task: task)
+                            })
+                        }.onDelete(perform: { indexSet in
+                            tasksListViewModel.deleteTask(uid: authUser.uid, indexSet: indexSet)
                         })
                     }
                     VStack {
@@ -31,7 +34,9 @@ struct TaskListView: View {
                         HStack {
                             Spacer()
                             Button {
-                                isPresentedSheet.toggle()
+                                self.presentationView = PresentationView(view: AddTaskView(addTask: { taskName in
+                                    tasksListViewModel.addTask(uid: authUser.uid, task: .init(name: taskName, isDone: false))
+                                }))
                             } label: {
                                 Image(systemName: "plus.circle")
                                     .resizable()
@@ -42,25 +47,19 @@ struct TaskListView: View {
                     }
                 }
                 .navigationTitle("Tasks")
-                .navigationBarItems(trailing: Button("sign out", action: {
-                    authService.signout()
-                }))
+                .navigationBarItems(trailing:
+                                        Image(systemName: "person.circle")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                        .onTapGesture(perform: {
+                                            self.presentationView = PresentationView(view: UserView(userId: authUser.uid))
+                                        })
+                )
                 .onAppear(perform: {
                     tasksListViewModel.fetchTasks(userId: authUser.uid)
                 })
             }
         }.navigationViewStyle(StackNavigationViewStyle())
-        .sheet(isPresented: $isPresentedSheet) {
-            AddTaskView(addTask: { task in
-                let task = Task(name: task, isDone: false)
-                tasksListViewModel.addTask(uid: authUser.uid, task: task, completion: { error in
-                    if let error = error {
-                        print(error)
-                        return
-                    }
-                    self.isPresentedSheet = false
-                })
-            })
-        }
+        .sheet(item: $presentationView, content: { $0 })
     }
 }

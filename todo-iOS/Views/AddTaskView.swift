@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct AddTaskView: View {
+struct AddTaskView: View, Identifiable {
 
     @State var taskName = ""
 
     var addTask: (String) -> Void = { _ in }
+
+    var id: UUID {
+        UUID()
+    }
 
     var body: some View {
         TextField("name", text: $taskName)
