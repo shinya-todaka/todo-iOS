@@ -9,17 +9,19 @@ import SwiftUI
 
 struct PresentationView: View, Identifiable {
     typealias ID = AnyHashable
+
     private let _id: ID
+
     var id: ID {
         _id
     }
 
     private let _body: AnyView
-    var body: some View {
+    internal var body: some View {
         _body
     }
 
-    init?<V>(view: V?) where V: View & Identifiable {
+    internal init?<V>(view: V?) where V: View & Identifiable {
         guard let view = view else {
             return nil
         }

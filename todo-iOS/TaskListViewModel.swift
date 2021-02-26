@@ -5,12 +5,11 @@
 //  Created by 戸高新也 on 2020/10/29.
 //
 
-import Firebase
 import Combine
+import Firebase
 import SwiftUI
 
 class TaskListViewModel: ObservableObject {
-
     private var userId: String?
     private let tasksRepository = TasksRepository()
 
@@ -23,6 +22,7 @@ class TaskListViewModel: ObservableObject {
             switch result {
             case let .failure(error):
                 print(error)
+
             case .finished:
                 print("finsihed")
             }
@@ -65,6 +65,7 @@ class TaskListViewModel: ObservableObject {
                 switch result {
                 case let .failure(error):
                     print(error)
+
                 case .finished:
                     print("deleted!")
                 }

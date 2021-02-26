@@ -5,8 +5,8 @@
 //  Created by 戸高新也 on 2020/10/29.
 //
 
-import XCTest
 @testable import todo_iOS
+import XCTest
 // swiftlint:disable type_name
 class todo_iOSTests: XCTestCase {
 

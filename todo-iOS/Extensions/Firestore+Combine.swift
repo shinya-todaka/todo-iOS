@@ -30,9 +30,7 @@ extension CollectionReference {
 }
 
 extension DocumentReference {
-
     class Subscription<S: Subscriber>: Combine.Subscription where S.Input == DocumentSnapshot, S.Failure == Error {
-
         var listener: ListenerRegistration?
 
         init(subscriber: S, documentReference: DocumentReference) {
@@ -55,7 +53,6 @@ extension DocumentReference {
         func cancel() {
             listener?.remove()
         }
-
     }
 
     struct Publisher: Combine.Publisher {
@@ -108,7 +105,6 @@ extension DocumentReference {
 
 extension Query {
     class Subscription<S: Subscriber, D: Decodable>: Combine.Subscription where S.Input == [D], S.Failure == Error {
-
         var listener: ListenerRegistration?
 
         init(subscriber: S, query: Query) {
