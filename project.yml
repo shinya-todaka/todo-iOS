@@ -1,0 +1,95 @@
+name: todo-iOS
+
+options:
+  bundleIdPrefix: com.tdk0105.shinya
+  deploymentTarget:
+    iOS: 14.0
+  developmentLanguage: ja
+  xcodeVersion: "12.3"
+
+settings:
+  configs:
+    debug:
+      DEBUG_INFORMATION_FORMAT: "dwarf-with-dsym"
+
+packages:
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    version: 7.3.1
+
+targets:
+  todo-iOS:
+    type: application
+    platform: iOS
+    sources:
+      - todo-iOS
+    settings:
+      base:
+        INFOPLIST_FILE: todo-iOS/Info.plist
+        DEVELOPMENT_LANGUAGE: jp
+    dependencies:
+      - package: Firebase
+        product: FirebaseCrashlytics
+      - package: Firebase
+        product: FirebaseFirestore
+      - package: Firebase
+        product: FirebaseAuth
+      - package: Firebase
+        product: FirebaseInstallations
+      - package: Firebase
+        product: FirebaseMessaging
+      - package: Firebase
+        product: FirebaseRemoteConfig
+      - package: Firebase
+        product: FirebaseFirestoreSwift-Beta
+      - package: Firebase
+        product: FirebaseStorage
+        
+  todo-iOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - todo-iOSTests
+    settings:
+      base:
+        INFOPLIST_FILE: todo-iOSTests/Info.plist
+    dependencies:
+      - target: todo-iOS
+
+  todo-iOSUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - todo-iOSUITests
+    settings:
+      base:
+        INFOPLIST_FILE: todo-iOSUITests/Info.plist
+    dependencies:
+      - target: todo-iOS
+
+schemes:
+  todo-iOS:
+    build:
+      targets:
+        todo-iOS: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - todo-iOS
+      targets:
+        - name: todo-iOSTests
+          parallelizable: true
+          randomExecutionOrder: true
+        - name: todo-iOSUITests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+
