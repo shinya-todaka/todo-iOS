@@ -44,6 +44,10 @@ targets:
         product: FirebaseFirestoreSwift-Beta
       - package: Firebase
         product: FirebaseStorage
+
+    postCompileScripts: 
+      - path: Scripts/XcodeGen/swiftlint.sh
+        name: Run SwiftLint
         
   todo-iOSTests:
     type: bundle.unit-test

@@ -12,7 +12,6 @@ struct TaskView: View {
     var updateTask: (Task) -> Void = { _ in }
 
     var body: some View {
-
         HStack {
             Text(task.name)
                 .font(.subheadline)

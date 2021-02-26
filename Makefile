@@ -13,8 +13,14 @@ help:
 
 .PHONY: setup
 setup: # Install dependencies and prepared development configuration
+	$(MAKE) install-bundler
 	$(MAKE) install-mint
 	$(MAKE) generate-xcodeproj
+
+.PHONY: install-bundler
+install-bundler:
+	bundle config path vendor/bundle 
+        bundle install --without=documentation --jobs 4 --retry 3
 
 .PHONY: install-mint
 install-mint: # Install Mint dependencies

@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct SignInView: View {
-
     @EnvironmentObject var authService: AuthenticationService
 
     var body: some View {
-
         VStack(alignment: .center) {
             Spacer()
 

@@ -9,7 +9,6 @@ import Combine
 import FirebaseAuth
 
 class AuthenticationService: ObservableObject {
-
     @Published var authState: AuthState = .pending
 
     enum AuthState {
