@@ -28,3 +28,7 @@ generate-xcodeproj: # Generate project with XcodeGen
 .PHONY: open
 open: # Open project in Xcode
 	open ./${PROJECT_NAME}
+
+.PHONY: show-devices
+show-devices: # Show devices
+	xcrun xctrace list devices
