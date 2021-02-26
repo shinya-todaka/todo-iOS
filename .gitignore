@@ -26,5 +26,8 @@ Pods/*
 !.gitkeep
 .DS_Store
 
+vendor/bundle/
+.bundle/
+
 #Firebase 
 todo-iOS/GoogleService-Info.plist 
