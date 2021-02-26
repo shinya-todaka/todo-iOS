@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+    paths-ignore:
+      - README.md
+  pull_request:
+    branches:
+      # - !master
+      - develop
+    paths-ignore:
+      - README.md
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_12.3.app
+
+jobs:
+  info:
+    runs-on: macOS-latest
+
+    steps:
+    # チェックアウト
+    - uses: actions/checkout@v2
+
+    # Xcodeの一覧出力
+    - name: Show Xcode list
+      run: ls /Applications | grep 'Xcode'
+
+    # 端末の一覧出力
+    - name: Show devices
+      run: make show-devices
