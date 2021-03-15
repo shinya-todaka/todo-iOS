@@ -13,3 +13,4 @@ After setup is complete, Workspace automatically opens in Xcode.
 ## What I did 
 - added makefile 
 - installed xcodegen 
+- test
