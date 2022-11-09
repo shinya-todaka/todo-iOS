@@ -9,7 +9,6 @@ import FirebaseAuth
 import SwiftUI
 
 struct TaskListView: View {
-
     @ObservedObject private var tasksListViewModel = TaskListViewModel()
 
     let authUser: FirebaseAuth.User

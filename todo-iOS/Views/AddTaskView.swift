@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AddTaskView: View, Identifiable {
-
     @State var taskName = ""
 
     var addTask: (String) -> Void = { _ in }
